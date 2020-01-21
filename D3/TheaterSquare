@@ -1,0 +1,38 @@
+import java.util.Scanner;
+public class watermelon{
+ 
+   public static void main(String args[]){
+            Scanner scanner = new Scanner(System.in);
+            int n = scanner.nextInt();
+            int m = scanner.nextInt();
+            int a = scanner.nextInt();
+ 
+            System.out.println(theatreSquare(n,m,a));
+    }
+     static int  theatreSquare(int n,int m,int a){
+          if(n<a && m<a) return 1;
+          
+          int larger = n;
+          if(n<m) larger = m;
+ 
+          else if(n <a || m<a){
+             if(larger == a) return 1;  
+              else if(larger%a == 0) return (larger/a) *2;
+                  else return ((larger/a)+1)*2;   
+         
+          }
+        
+              int side1,side2;
+               if(n%a == 0) side1= (n/a);
+               else side1= ((n/a)+1);
+               
+               if(m%a == 0) side2= (m/a);
+               else side2= ((m/a)+1);
+ 
+               return side1 *side2;
+               
+       
+              
+      }
+    
+}
