@@ -1,0 +1,21 @@
+public static void selectionSort (int [] data){
+        int smallest;
+        for(int i = 0; i<data.length-1;i++){
+            smallest = i;
+            for(int index = i+1;index<data.length;index++){
+                if(data[index] < data[smallest])
+                    smallest = index;
+            }
+            swap(i,smallest);
+             
+        }
+         for(int j = 0; j<data.length;j++){
+             System.out.println(data[j]);
+         }
+    }
+    
+    public static void swap(int first,int second){
+        int temp = data[first];
+        data[first] = data[second];
+        data[second] = temp;
+    }
