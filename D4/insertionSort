@@ -1,0 +1,15 @@
+ public static int[] insertionSort(int [] data){
+        int insert;
+        for(int next = 1; next<data.length;next++){
+            insert = data[next];
+            int moveItem = next;
+            
+            while(moveItem>0 && data[moveItem-1]>insert){
+                data[moveItem] = data[moveItem-1];
+                moveItem--;
+            }
+            data[moveItem] = insert;
+        }
+        return data;
+    }
+    
