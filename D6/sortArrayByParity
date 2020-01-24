@@ -1,0 +1,35 @@
+class Solution {
+    public int[] sortArrayByParityII(int[] A) {
+        
+         int [] oddHalf = new int [A.length/2];
+        int [] evenHalf = new int [A.length/2];
+        int evenIndex = 0;
+        int oddIndex = 0;
+        for (int i = 0; i  < A.length;i++){
+            if(A[i]%2 == 0){
+                evenHalf[evenIndex] = A[i];
+                evenIndex++;
+            }
+            else{
+                oddHalf[oddIndex] = A[i];
+                oddIndex++;
+            }
+            
+        }
+        evenIndex--;
+        oddIndex--;
+          for (int j = 0; j  < A.length;j++){
+              if(j%2 == 0 ){
+                  A[j] = evenHalf[evenIndex];
+                  evenIndex--;
+              }
+              else{
+                 A[j] = oddHalf[oddIndex];
+                 oddIndex--;
+ 
+              }
+          }
+        return A;
+        
+    }
+}
